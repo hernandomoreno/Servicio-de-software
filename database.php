@@ -36,12 +36,12 @@ class Database {
     }
 
     // MÉTODO PARA AGREGAR USUARIO (REGISTRO)
-    public function agregarUsuario($usuario, $password, $email = "") {
+    public function agregarUsuario($usuario, $password, $nombre = "") {
         try {
-            $sql = "INSERT INTO usuarios (usuario, password, email) VALUES (?, ?, ?)";
+            $sql = "INSERT INTO usuarios (usuario, password, nombre) VALUES (?, ?, ?)";
             $stmt = $this->conn->prepare($sql);
-            return $stmt->execute([$usuario, $password, $email]);
-        } catch (PDOException $e) {
+            return $stmt->execute([$usuario, $password, $nombre]);
+        } catch (PDOException $e) { //PDO es la forma moderna de conectarse a bd en PHP.
             return false;
         }
     }
@@ -53,7 +53,7 @@ class Database {
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([$usuario]);
             return $stmt->fetch(PDO::FETCH_ASSOC) !== false;
-        } catch (PDOException $e) {
+        } catch (PDOException $e) { //PDO es la forma moderna de conectarse a bd en PHP.
             return false;
         }
     }

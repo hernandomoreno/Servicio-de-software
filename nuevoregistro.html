@@ -15,12 +15,12 @@
 
     <h2>Registro de Usuario</h2>
 
-    <form onsubmit="return registrarUsuario()">
-        <input type="text" id="nombres" placeholder="Nombres" required><br>
-        <input type="text" id="apellidos" placeholder="Apellidos" required><br>
-        <input type="text" id="cedula" placeholder="Cédula" required><br>
-        <input type="date" id="fecha" required><br>
-        <button type="submit">Guardar información</button><br><br>
+    <form name="nuevo" method="POST" action="procesar_registro.php">
+        <input type="text" id="usuaio" name="user" required><br>
+        <input type="password" id="password" name="pass" required><br>
+        <input type="text" id="nombre" name="nombre"><br>
+        <input type="text" id="apellidos" name="apellidos"><br>
+        <button type="submit" name="submit">Guardar información</button><br><br>
         <a href="index.html">¿Ya tienes cuenta? Inicia sesión</a>
     </form>
 

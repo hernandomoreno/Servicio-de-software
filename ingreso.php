@@ -1,10 +1,11 @@
 <?php
 require_once 'database.php'; //incluye/importa el archivo de clase Database una sola vez
 
-$db = new Database();
+//Instanciando 
+$db = new Database(); 
 
 if ($db->conectar()) {
-    if (isset($_POST['submit'])) { //si exis var-campo submit
+    if (isset($_POST['submit'])) { //verif si existe el dato submit envia mediante el método POST.
         $usuario = $_POST['user'];
         $password = $_POST['pass'];
         
